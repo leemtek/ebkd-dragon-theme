@@ -1,0 +1,36 @@
+{
+  "name": "leemtek",
+  "description": "Creating solutions using IT and Web Development.",
+  "main": "",
+  "authors": [
+    "Duane Leem <duaneleem@alumni.ggu.edu>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "leemtek",
+    "dental",
+    "IT",
+    "web",
+    "development",
+    "software",
+    "engineering"
+  ],
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "angular": "~1.4.8",
+    "angular-recaptcha": "~2.2.5",
+    "font-awesome": "fontawesome#~4.5.0",
+    "jquery": "2.2.3"
+  }
+}
+

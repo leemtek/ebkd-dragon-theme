@@ -1,0 +1,58 @@
+/* ------------------------------------------------------------
+    Website: EastBayKarate-Do.com
+    Author: Duane Leem, MSc, PMP
+------------------------------------------------------------ */
+@media (min-width: 992px) {
+        /* This fixes the logo problem when scrolling down. */
+        .fixed-header-on .header .logo img {
+                max-height: 50px;
+                padding-top: 0px !important;
+        } /* .fixed-header-on .header .logo img */
+} /* @media (min-width: 992px) */
+
+h3 {
+    font-size: 22px;
+}
+
+
+/* ------------------------------------------------------------
+    Google Maps
+------------------------------------------------------------ */
+.gmaps-footer {
+    width: 100%;
+    height: 240px;
+    border: 0px;
+}
+
+
+/* ------------------------------------------------------------
+    Homepage
+------------------------------------------------------------ */
+.banner-title {
+    text-shadow: #FFF 2px 2px 3px;
+}
+
+
+/* ------------------------------------------------------------
+    Header Modification
+------------------------------------------------------------ */
+
+
+/* ------------------------------------------------------------
+    Footer Modification
+------------------------------------------------------------ */
+
+
+/* ------------------------------------------------------------
+    General
+------------------------------------------------------------ */
+.space-top-10 { margin-top: 10px; }
+.space-top-20 { margin-top: 20px; }
+.space-top-40 { margin-top: 40px; }
+.space-bottom-40 { margin-bottom: 40px; }
+
+.width-auto { width: auto; }
+.width-700 { width: 700px; }
+
+/* alignments */
+.text-center { text-align: center; }
