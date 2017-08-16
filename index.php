@@ -14,43 +14,56 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+<!-- breadcrumb start-->
+<!-- ================-->
+<div class="breadcrumb-container">
+	<div class="container">
+		<ol class="breadcrumb">
+			<li><i class="fa fa-home pr-10"></i><a class="link-dark" href="/">Home</a></li>
+			<li class="active">
+				<?php if ( is_home() && ! is_front_page() ): single_post_title(); endif; ?>
+			</li>
+		</ol>
+	</div>
+</div>
+<!-- banner end-->
 
-		<?php
-		if ( have_posts() ) :
-
-			if ( is_home() && ! is_front_page() ) : ?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-
+<section class="container container-padding-top-bottom-40">
+	<div class="row">
+		<div class="col-md-9">
 			<?php
-			endif;
+			if ( have_posts() ) :
+				/* Start the Loop */
+				while ( have_posts() ) : the_post();
+					?>
+						<div class="col-sm-6">
+							<div class="panel panel-default">
+								<div class="panel-body">
+									<?php
+										/*
+										 * Include the Post-Format-specific template for the content.
+										 * If you want to override this in a child theme, then include a file
+										 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+										 */
+										get_template_part( 'template-parts/content', get_post_format() );
+									?>
+								</div>
+							</div>
+						</div><!-- /col -->
+						
+					<?php
+				endwhile;
 
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+				the_posts_navigation();
+			else :
+				get_template_part( 'template-parts/content', 'none' );
+			endif; ?>
+		</div><!-- /col -->
+		
+		<div class="col-md-3">
+			<?php get_sidebar(); ?>
+		</div><!-- /col -->
+	</div>
+</section>
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif; ?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php
-get_sidebar();
-get_footer();
+<?php get_footer();

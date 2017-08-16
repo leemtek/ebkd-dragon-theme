@@ -105,10 +105,10 @@ function dragon_widgets_init() {
 		'name'          => esc_html__( 'Sidebar', 'dragon' ),
 		'id'            => 'sidebar-1',
 		'description'   => esc_html__( 'Add widgets here.', 'dragon' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'before_widget' => '<section id="%1$s" class="panel panel-default %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<div class="panel-heading space-bottom-10"><h3 class="panel-title widget-title">',
+		'after_title'   => '</h3></div>',
 	) );
 }
 add_action( 'widgets_init', 'dragon_widgets_init' );
@@ -155,3 +155,51 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+
+/* ============================================================
+    Additional functions developed by Duane.
+============================================================ */
+/**
+ * Custom walker to to update main nav output.
+ */
+class MainNav_Walker extends Walker_Nav_Menu {
+	// Adds dropdown-menu class
+	function start_lvl( &$output, $depth = 0, $args = array() ) {
+		$indent = str_repeat("\t", $depth);
+        $output .= "\n$indent<ul class='dropdown-menu'>\n";
+	} // start_lvl
+	
+	function end_lvl( &$output, $depth = 0, $args = array() ) {
+        $indent = str_repeat("\t", $depth);
+        $output .= "$indent</ul>\n";
+    } // end_lvl
+
+	// Add dropdowns after first <li>
+	function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+        if($depth == 0) {
+			// Check if item is a parent item.
+			if ($args->walker->has_children) {
+				// This is a parent item and I will add a caret.
+				$output .= sprintf( '<li class="dropdown"><a href="' . $item->url . '" class="dropdown-toggle">' . $item->title . '<span class="caret"></span></a>',
+					$item->url,
+					( $item->object_id === get_the_ID() ) ? ' class="current"' : '',
+					$item->title
+				); // $output
+			} else {
+				// Otherwise it's a single item with no child items.
+				$output .= sprintf( '<li><a href="' . $item->url . '" class="">' . $item->title . '</a>',
+					$item->url,
+					( $item->object_id === get_the_ID() ) ? ' class="current"' : '',
+					$item->title
+				); // $output
+			} // if
+		} else {
+			$output .= sprintf( '<li><a href="' . $item->url . '">' . $item->title . '</a>',
+				$item->url,
+				( $item->object_id === get_the_ID() ) ? ' class="current"' : '',
+				$item->title
+			); // $output
+		} // outer if
+    } // start_el()
+} // MainNav_Walker

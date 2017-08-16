@@ -1,19 +1,27 @@
 <?php
-/**
- * The template for displaying all single posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
- * @package Dragon
- */
+/*
+    Template Name: No Header | Full Page
+*/
+
+/* ================================================================================
+    WordPress Post Fields | Content
+================================================================================ */
+$objThePost = get_post();
 
 get_header(); ?>
+
+<style>
+    .alignright {
+        float: right;
+        padding: 20px;
+    }
+</style>
 
 <div class="page-wrapper">
     <!-- body content-->
     <!-- banner start-->
     <!-- ================-->
-    <!-- breadcrumb start-->
+     <!-- breadcrumb start-->
     <!-- ================-->
     <div class="breadcrumb-container">
         <div class="container">
@@ -24,32 +32,15 @@ get_header(); ?>
         </div>
     </div>
     <!-- banner end-->
-	
     <!-- main-container start-->
     <!-- ================-->
     <section class="main-container padding-bottom-clear">
         <div class="container">
             <!-- Who We Are-->
             <div class="row">
-                <div class="main col-md-9">
-					<?php
-						while ( have_posts() ) : the_post();
-
-							get_template_part( 'template-parts/content', get_post_format() );
-
-							the_post_navigation();
-
-							// If comments are open or we have at least one comment, load up the comment template.
-							if ( comments_open() || get_comments_number() ) :
-								comments_template();
-							endif;
-
-						endwhile; // End of the loop.
-					?>
-                </div><!-- /col -->
-				<div class="col-md-3">
-					<?php get_sidebar(); ?>
-				</div><!-- /col -->
+                <div class="main col-md-12">
+                    <?php echo apply_filters('the_content', $objThePost->post_content); ?>
+                </div>
                 <!-- main end-->
             </div>
             <!-- /row-->
@@ -61,4 +52,4 @@ get_header(); ?>
     
 </div>
 
-<?php get_footer();
+<?php get_footer(); ?>

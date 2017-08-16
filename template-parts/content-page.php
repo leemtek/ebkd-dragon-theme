@@ -9,42 +9,59 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
+<section class="container">
+	<div class="row">
+		<div class="col-lg-9">
+			<?php // Author and Date for Blog Posts
+				if ( in_category( "Blog" ) ) : ?>
+					<ul class="list-inline">
+						<li class="blog-author-date"><i class="fa fa-user"></i> <?php the_author(); ?></li>
+						<li class="blog-author-date"><i class="fa fa-calendar"></i> <time><?php the_date("M j, Y"); ?></time></li>
+					</ul>
+			<?php endif; ?>
 
-	<div class="entry-content">
-		<?php
-			the_content();
+			<!-- ======================================================================
+				Featured Image
+			====================================================================== -->
+			<div class="margin-bottom-40">
+				<?php if(has_post_thumbnail()) { ?>
+					<?php the_post_thumbnail('post-thumbnail', array( 'class' => "img-responsive full-img")); ?>
+					<span class="caption"><?php the_field('feature_image_caption'); ?></span>
+				<?php } ?>
+			</div>
 
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'dragon' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-content -->
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				<div class="entry-content">
+					<?php
+						the_content();
 
-	<?php if ( get_edit_post_link() ) : ?>
-		<footer class="entry-footer">
-			<?php
-				edit_post_link(
-					sprintf(
-						wp_kses(
-							/* translators: %s: Name of current post. Only visible to screen readers */
-							__( 'Edit <span class="screen-reader-text">%s</span>', 'dragon' ),
-							array(
-								'span' => array(
-									'class' => array(),
+						wp_link_pages( array(
+							'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'Dragon' ),
+							'after'  => '</div>',
+						) );
+					?>
+				</div><!-- .entry-content -->
+
+				<?php if ( get_edit_post_link() ) : ?>
+					<footer class="entry-footer">
+						<?php
+							edit_post_link(
+								sprintf(
+									/* translators: %s: Name of current post */
+									esc_html__( 'Edit %s', 'Dragon' ),
+									the_title( '<span class="screen-reader-text">"', '"</span>', false )
 								),
-							)
-						),
-						get_the_title()
-					),
-					'<span class="edit-link">',
-					'</span>'
-				);
-			?>
-		</footer><!-- .entry-footer -->
-	<?php endif; ?>
-</article><!-- #post-<?php the_ID(); ?> -->
+								'<span class="edit-link">',
+								'</span>'
+							);
+						?>
+					</footer><!-- .entry-footer -->
+				<?php endif; ?>
+			</article><!-- #post-## -->
+		</div><!-- /col -->
+
+		<div class="col-lg-3">
+			<?php get_sidebar(); ?>
+		</div><!-- /col -->
+	</div><!-- /row -->
+</section><!-- /container -->

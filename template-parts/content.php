@@ -11,44 +11,64 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
+		<!-- Grab all posts EXCEPT Event posts from Categories. -->
+		<?php if ( 'post' === get_post_type() ) : ?>
+			<div class="masonry-post col-sm-12 margin-bottom-40">
+				<div class="grid-post">
+					<!-- ======================================================================
+						Thumbnail
+					====================================================================== -->
+					<?php if(has_post_thumbnail()) { ?>
+						<?php the_post_thumbnail('post-thumbnail', array( 'class' => "img-responsive full-img")); ?>
+						<?php } ?>
 
-		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php dragon_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php
-		endif; ?>
+
+						<div class="grid-post-meta">
+							<!-- ======================================================================
+								Title
+							====================================================================== -->
+							<?php 
+								if ( is_single() ) :
+									the_title( '<h3>', '</h3>' );
+								else :
+									the_title( '<h3><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
+								endif; 
+							?>
+
+							<!-- ======================================================================
+								Author Info
+							====================================================================== -->
+							<ul class="list-inline">
+								<li><i class="fa fa-user"></i> <?php the_author(); ?></li>
+								<li><i class="fa fa-calendar"></i> <time><?php the_date("M j, Y"); ?></time></li>
+								<li><i class="fa fa-folder"></i> <?php the_category(", "); ?></li>
+							</ul>
+
+							<!-- ======================================================================
+								Content
+							====================================================================== -->
+							<p class="post-excerpt">
+								<?php the_excerpt(); ?>
+							</p>
+
+							<!-- ======================================================================
+								Entry Footer
+							====================================================================== -->
+							<!-- if have_comments() or is_admin -->
+							<?php if(have_comments() || current_user_can("edit_others_posts")) { ?>
+								<ul class="list-inline">
+									<?php if(have_comments()) { ?>
+										<li><i class="fa fa-comments"></i> <?php comments_number(); ?></li>
+									<?php } ?>
+									<li>
+										<!-- Edit Post -->
+										<?php edit_post_link("Edit", "<i class='fa fa-pencil'></i> "); ?>
+									</li>
+								</ul>
+							<?php } ?>
+						</div>
+					</div>
+			</div><!--end col-->
+		<?php endif; ?>
 	</header><!-- .entry-header -->
-
-	<div class="entry-content">
-		<?php
-			the_content( sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'dragon' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				get_the_title()
-			) );
-
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'dragon' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php dragon_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-<?php the_ID(); ?> -->
+</article><!-- #post-## -->

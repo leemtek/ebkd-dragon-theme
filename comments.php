@@ -20,12 +20,15 @@ if ( post_password_required() ) {
 }
 ?>
 
-<div id="comments" class="comments-area">
+<style>
+	#commentform > p.comment-form-comment > label { display: block; }
+</style>
 
+<div class="col-sm-12">
 	<?php
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) : ?>
-		<h2 class="comments-title">
+		<a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
 			<?php
 				$comment_count = get_comments_number();
 				if ( 1 === $comment_count ) {
@@ -43,21 +46,25 @@ if ( post_password_required() ) {
 					);
 				}
 			?>
-		</h2><!-- .comments-title -->
+		</a>
+		<div class="collapse" id="collapseExample">
+			<div class="well">
+				<?php the_comments_navigation(); ?>
 
-		<?php the_comments_navigation(); ?>
+				<ol class="comment-list">
+					<?php
+						wp_list_comments( array(
+							'style'      => 'ol',
+							'short_ping' => true,
+						) );
+					?>
+				</ol><!-- .comment-list -->
+				
+				<?php the_comments_navigation(); ?>
+			</div>
+		</div>
 
-		<ol class="comment-list">
-			<?php
-				wp_list_comments( array(
-					'style'      => 'ol',
-					'short_ping' => true,
-				) );
-			?>
-		</ol><!-- .comment-list -->
-
-		<?php the_comments_navigation();
-
+		<?php 
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() ) : ?>
 			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'dragon' ); ?></p>
