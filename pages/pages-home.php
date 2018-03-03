@@ -52,6 +52,7 @@ get_header(); ?>
                                         target="_blank">Contact Us <i class="fa fa-envelope"></i></a></div>
                         </li>
                         <!-- slide 1 end-->
+                      
                         <!-- Uechi-Ryu Karate | slide 2 start-->
                         <!-- ================-->
                         <li data-transition="fade" data-slotamount="1" data-masterspeed="500" data-saveperformance="on"
@@ -81,35 +82,6 @@ get_header(); ?>
                                         target="_blank">Contact Us <i class="fa fa-envelope"></i></a></div>
                         </li>
                         <!-- slide 2 end-->
-                        <!-- Cardio Kickboxing | slide 3-->
-                        <!-- ================-->
-                        <li data-transition="fade" data-slotamount="1" data-masterspeed="500" data-saveperformance="on"
-                            data-title="Extreme Fitness Program">
-                            <!-- main image--><img src="https://d1xrp9zhb3ks3c.cloudfront.net/web/eastbaykarate-do/images/web/hpbanner-cardio-kickboxing.jpg"
-                                alt="slidebg3" data-bgposition="center top" data-bgrepeat="no-repeat" data-bgfit="cover">
-                            <!-- Transparent Background-->
-                            <div class="tp-caption dark-translucent-bg" data-x="center" data-y="bottom" data-speed="600"
-                                data-start="0"></div>
-                            <!-- LAYER NR. 1-->
-                            <div class="tp-caption sfb fadeout large_white banner-title" data-x="left" data-y="110" data-speed="500"
-                                data-start="1000" data-easing="easeOutQuad">Extreme Fitness Program</div>
-                            <!-- LAYER NR. 2-->
-                            <div class="tp-caption sfb fadeout large_white tp-resizeme hidden-xs" data-x="left" data-y="170"
-                                data-speed="500" data-start="1300" data-easing="easeOutQuad">
-                                <div class="separator-2 light"></div>
-                            </div>
-                            <!-- LAYER NR. 3-->
-                            <div class="tp-caption sfb fadeout medium_white hidden-xs" data-x="left" data-y="180" data-speed="500"
-                                data-start="1300" data-easing="easeOutQuad" data-endspeed="600">Our Fitness Kickboxing class will get you in shape <br>in less time then any type of aerobic
-                                class out there</div>
-                            <!-- LAYER NR. 4-->
-                            <div class="tp-caption sfb fadeout small_white" data-x="left" data-y="260" data-speed="500"
-                                data-start="1600" data-easing="easeOutQuad" data-endspeed="600"><a class="btn radius-50 btn-dark btn-animated" href="programs">Read More <i class="fa fa-arrow-right"></i></a>
-                                <span
-                                    class="pl-5 pr-5">or</span><a class="btn radius-50 btn-default btn-animated" href="https://docs.google.com/forms/d/e/1FAIpQLSfXkAfrl4MRTgew5Sp-R0BrH1F1uR1sk6dR3POkSH51q4HjYw/viewform"
-                                        target="_blank">Contact Us <i class="fa fa-envelope"></i></a></div>
-                        </li>
-                        <!-- slide 3 end-->
                     </ul>
                     <div class="tp-bannertimer"></div>
                 </div>
@@ -155,10 +127,10 @@ get_header(); ?>
                     <p class="large text-center">If your goal is to master karate or evolve your body to a new you, our programs are designed to exceed
                         your expectations.</p>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 col-md-offset-2">
                     <div class="pv-30 ph-20 feature-box bordered shadow text-center object-non-visible" data-animation-effect="fadeInDownSmall"
                         data-effect-delay="100">
-                        <div><img class="img-responsive" src="https://d1xrp9zhb3ks3c.cloudfront.net/web/eastbaykarate-do/images/eastbaykarate-do/hp-sm-banner-little.png"
+                        <div><img class="img-responsive" src="https://d1xrp9zhb3ks3c.cloudfront.net/web/eastbaykarate-do/images/eastbaykarate-do/hp-sm-banner-little-ninjas-dragons.jpg"
                                 alt="Little Ninjas &amp;amp;, Little Dragons"></div>
                         <div class="separator clearfix"></div>
                         <p>Our specialized Little Ninja’s Karate program is an age-specific curriculum that is professionally
@@ -175,15 +147,6 @@ get_header(); ?>
                         <div class="separator clearfix"></div>
                         <p>You will gain confidence and self-esteem by improving your physical fitness, body composition,
                             and self-defense skills by mastering the art of Okinawan Uechi-Ryu Karate.</p><a href="programs">Read More <i class="pl-5 fa fa-angle-double-right"></i></a></div>
-                </div>
-                <div class="col-md-4">
-                    <div class="pv-30 ph-20 feature-box bordered shadow text-center object-non-visible" data-animation-effect="fadeInDownSmall"
-                        data-effect-delay="200">
-                        <div><img class="img-responsive" src="https://d1xrp9zhb3ks3c.cloudfront.net/web/eastbaykarate-do/images/eastbaykarate-do/hp-sm-banner-fitness.png"
-                                alt="Extreme Fitness Program"></div>
-                        <div class="separator clearfix"></div>
-                        <p>Our Fitness Kickboxing class will get you in shape in less time then any type of aerobic class
-                            out there.</p><a href="programs">Read More <i class="pl-5 fa fa-angle-double-right"></i></a></div>
                 </div>
             </div>
         </div>
