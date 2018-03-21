@@ -90,10 +90,12 @@ get_header(); ?>
         </div>
         <!-- slideshow end-->
     </div>
-    <!-- banner end-->
+
     <div id="page-start"></div>
-    <!-- CALL TO ACTION: SPECIALS-->
-    <!-- ================-->
+    
+    <!-- ====================================================================
+      Call To Action: Specials
+    ==================================================================== -->
     <section class="section default-bg clearfix">
         <div class="container">
             <div class="row">
@@ -115,9 +117,10 @@ get_header(); ?>
             </div>
         </div>
     </section>
-    <!-- section end-->
-    <!-- OUR PROGRAMS-->
-    <!-- ================-->
+
+    <!-- ====================================================================
+      Our Programs
+    ==================================================================== -->
     <section class="light-gray-bg pv-30 clearfix">
         <div class="container">
             <div class="row">
@@ -151,7 +154,60 @@ get_header(); ?>
             </div>
         </div>
     </section>
-    <!-- section end-->
+
+    <!-- ====================================================================
+      Blog Feed
+    ==================================================================== -->
+    <style>
+      #hp-blog-listings .panel-default .panel-heading {
+        background-color: #dc5b5b;
+        border-color: #dc5b5b;
+        color: #fff;
+      }
+      
+      #hp-blog-listings .panel-default .panel-footer {
+        padding-top: 5px;
+        padding-bottom: 5px;
+      }
+    </style>
+    <section id="hp-blog-listings" class="pv-30 clearfix" style="background: white;">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <h2 class="text-center">Latest Info</h2>
+            <div class="lead text-center">
+              See our latest information for news and promotions!
+            </div>
+          </div>
+        </div><!-- /row -->
+        
+        <div class="row">
+          <!-- Define our WP Query Parameters -->
+          <?php $the_query = get_posts( array( 
+            "posts_per_page" => 4
+          ) ); ?>
+          
+          <!-- Start our WP Query -->
+          <?php if($the_query): ?>
+            <?php foreach ($the_query as $post): setup_postdata( $post ); ?>
+              <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="panel panel-default">
+                  <h3 class="panel-heading text-center text-bold" style="margin: 0; padding: 10px 0 10px 0; font-size: 1.2em;"><?php the_title(); ?></h3>
+                  <div class="panel-body">
+                    <p><?php the_excerpt(); ?></p>
+                    <div class="pull-right"><a href="<?php the_permalink(); ?>">Read More <i class="fa fa-long-arrow-right pl-5"></i></a></div>
+                  </div><!-- /panel-body -->
+
+                  <div class="panel-footer">
+                    <small><?php the_date("F j, Y"); ?></small>
+                  </div>
+                </div><!-- /panel -->
+              </div><!-- /col -->
+            <?php endforeach; wp_reset_postdata(); ?>
+          <?php endif; ?>
+        </div><!-- /row -->
+      </div><!-- /container -->
+    </section>
 </div>
 <!-- page-wrapper end-->
 
