@@ -32,20 +32,11 @@ get_header(); ?>
             <!-- Who We Are-->
             <div class="row">
                 <div class="main col-md-9">
-					<?php
-						while ( have_posts() ) : the_post();
-
-							get_template_part( 'template-parts/content', get_post_format() );
-
-							the_post_navigation();
-
-							// If comments are open or we have at least one comment, load up the comment template.
-							if ( comments_open() || get_comments_number() ) :
-								comments_template();
-							endif;
-
-						endwhile; // End of the loop.
-					?>
+									<?php
+										while ( have_posts() ) : the_post();
+											get_template_part( 'template-parts/content-page', get_post_format() );
+										endwhile; // End of the loop.
+									?>
                 </div><!-- /col -->
 				<div class="col-md-3">
 					<?php get_sidebar(); ?>

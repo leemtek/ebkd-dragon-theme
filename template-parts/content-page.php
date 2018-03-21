@@ -30,7 +30,10 @@
 				<?php } ?>
 			</div>
 
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+			<!-- ======================================================================
+				Content
+			====================================================================== -->
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="padding-top: 20px;">
 				<div class="entry-content">
 					<?php
 						the_content();

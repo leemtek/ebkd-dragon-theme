@@ -23,13 +23,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
 	<!-- Open Graph-->
-    <meta property="og:title" content="East Bay Karate-Do">
+	<!--
+		<meta property="og:title" content="East Bay Karate-Do">
     <meta property="og:site_name" content="East Bay Karate-Do">
     <meta property="og:url" content="https://eastbaykarate-do.com">
     <meta property="og:description" content="The vision of East Bay Karate-Do is to create leaders in our community and develop successful martial arts students, Black Belts, future instructors, and well rounded individuals.">
     <meta property="fb:app_id" content="100000105143394">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://d1xrp9zhb3ks3c.cloudfront.net/web/eastbaykarate-do/images/facebook-banner.jpg">
+    <meta property="og:image" content="https://d1xrp9zhb3ks3c.cloudfront.net/web/eastbaykarate-do/images/facebook-banner.jpg"> -->
     
 	<!-- Favicon-->
     <link rel="apple-touch-icon" sizes="180x180" href="https://d1xrp9zhb3ks3c.cloudfront.net/web/eastbaykarate-do/images/favicons/apple-touch-icon.png">
