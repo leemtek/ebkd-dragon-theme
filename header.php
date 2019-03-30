@@ -14,13 +14,9 @@
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-    <title><?php if (is_home() && ! is_front_page()) { single_post_title(); } else { the_title(); } ?> - East Bay Karate-Do</title>
-    <meta name="description" content="We train our students the ways of Uechi-Ryu Karate.  We enrich people's lives with our fitness, Zumba, and kickboxing classes.  Call us today!">
-    <meta name="author" content="Duane Leem">
-	<link rel="profile" href="http://gmpg.org/xfn/11">
     
 	<!-- Mobile Meta-->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
     
 	<!-- Open Graph-->
 	<!--

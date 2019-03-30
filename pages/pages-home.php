@@ -104,7 +104,7 @@ get_header(); ?>
                         <div class="row">
                             <div class="col-sm-8">
                                 <h1 class="title">Martial Arts</h1>
-                                <p>2 Lesson Trial Course $29.95. Includes FREE Uniform. Call us at <a href="tel:19255265229">(925) 439-0964</a>                                        or <a href="https://docs.google.com/forms/d/e/1FAIpQLSfXkAfrl4MRTgew5Sp-R0BrH1F1uR1sk6dR3POkSH51q4HjYw/viewform"
+                                <p>2 Lesson Trial Course $29.95. Includes FREE Uniform. Call us at <a href="tel:19254390964">(925) 439-0964</a>                                        or <a href="https://docs.google.com/forms/d/e/1FAIpQLSfXkAfrl4MRTgew5Sp-R0BrH1F1uR1sk6dR3POkSH51q4HjYw/viewform"
                                         target="_blank">Contact Info</a>!</p>
                             </div>
                             <div class="col-sm-4"><br>
